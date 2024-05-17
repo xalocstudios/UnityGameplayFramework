@@ -82,6 +82,7 @@ namespace Xesin.GameplayFramework
         protected Vector3 oldBaseLocation;
 
         protected Character characterOwner;
+        public MovementMode MovementMode => movementMode;
 
         protected override void Awake()
         {
