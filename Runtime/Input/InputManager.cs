@@ -138,11 +138,14 @@ namespace Xesin.GameplayFramework.Input
 
             if (!GameplayGlobalSettings.Instance.autocreatePlayersOnInput)
             {
-                LocalPlayer playerController = LocalPlayer.GetLocalPlayer(0);
-                if(playerController)
+                if (!GameplayGlobalSettings.Instance.autoAssignUnpairedToPlayerOne)
                 {
-                    playerController.AddNewDevice(device);
-                    PerfomPairingWithDevice(device, playerController);
+                    LocalPlayer playerController = LocalPlayer.GetLocalPlayer(0);
+                    if (playerController)
+                    {
+                        playerController.AddNewDevice(device);
+                        PerfomPairingWithDevice(device, playerController);
+                    }
                 }
             }
             else

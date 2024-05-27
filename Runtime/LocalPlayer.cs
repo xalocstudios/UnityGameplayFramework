@@ -51,7 +51,7 @@ namespace Xesin.GameplayFramework
         public void SetPlayerViewport(UIViewport uiViewport)
         {
             this.uiViewport = uiViewport;
-            if(EventSystem is MultiplayerEventSystem multiplayerEventSystem)
+            if (EventSystem is MultiplayerEventSystem multiplayerEventSystem)
                 multiplayerEventSystem.playerRoot = uiViewport.gameObject;
         }
 
@@ -81,7 +81,7 @@ namespace Xesin.GameplayFramework
 
         public static LocalPlayer GetLocalPlayer(int index)
         {
-            return index < localPlayers.Count ? localPlayers[index] : null;
+            return localPlayers.IsValidIndex(index) ? localPlayers[index] : null;
         }
 
         public static int GetNumPlayers()
@@ -96,7 +96,7 @@ namespace Xesin.GameplayFramework
 
         public Pawn GetControlledPawn()
         {
-            if(currentControledPlayer)
+            if (currentControledPlayer)
             {
                 return currentControledPlayer.GetPawn();
             }

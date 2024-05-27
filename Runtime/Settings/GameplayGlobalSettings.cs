@@ -12,6 +12,7 @@ namespace Xesin.GameplayFramework
         public LocalPlayer localPlayerPrefab;
         public InputActionAsset gameInputActionAsset;
         public bool autocreatePlayersOnInput;
+        public bool autoAssignUnpairedToPlayerOne = true;
         public bool autocreatePlayerOne = true;
 
 #if UNITY_EDITOR
