@@ -11,8 +11,9 @@ namespace Xesin.GameplayFramework
         [SerializeField] private Transform hintContainer;
         [SerializeField] private InputActionReference inputAction;
         [SerializeField] private Image hintPrefab;
-        [SerializeField] private float compositeElementSize = 100;
-        [SerializeField] private float compositeElementPadding = 5;
+        [SerializeField] private int compositeElementSize = 100;
+        [SerializeField] private int compositeElementPadding = 5;
+        [SerializeField] private Vector2 compositeElementSpacing;
         [SerializeField] private bool isSecondaryInput;
 
         private GridLayoutGroup gridLayout;
@@ -27,6 +28,13 @@ namespace Xesin.GameplayFramework
             if (!hintContainer.TryGetComponent(out gridLayout))
             {
                 gridLayout = hintContainer.gameObject.AddComponent<GridLayoutGroup>();
+                gridLayout.padding.right = compositeElementPadding;
+                gridLayout.padding.left = compositeElementPadding;
+                gridLayout.padding.top = compositeElementPadding;
+                gridLayout.padding.bottom = compositeElementPadding;
+
+                gridLayout.spacing = compositeElementSpacing;
+                gridLayout.cellSize = new Vector2(compositeElementSize, compositeElementSize);
             }
 
             if (!hintContainer.TryGetComponent(out sizeFitter))
