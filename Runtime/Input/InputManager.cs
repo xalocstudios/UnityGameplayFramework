@@ -102,6 +102,14 @@ namespace Xesin.GameplayFramework.Input
         public InputDevice[] GetPlayerOneDevicesCandidates()
         {
             var unpairedDevices = InputUser.GetUnpairedInputDevices();
+
+            Debug.Log("Unpaired devices count: " + unpairedDevices.Count);
+
+            for (int i = 0; i < unpairedDevices.Count; i++)
+            {
+                Debug.Log("Device: " + unpairedDevices[i].name);
+            }
+
             var playerOneDevices = unpairedDevices.Where(device => device.name == "Mouse" || device.name == "Keyboard").ToArray();
             var otherDevices = unpairedDevices.Where(device => device.name != "Mouse" && device.name != "Keyboard");
 
@@ -168,6 +176,9 @@ namespace Xesin.GameplayFramework.Input
         {
             for (int i = 0; i < devices.Length; i++)
             {
+                if (!playerController.Devices.Contains(devices[i]))
+                    playerController.AddNewDevice(devices[i]);
+
                 PerfomPairingWithDevice(devices[i], playerController);
             }
         }
@@ -201,6 +212,5 @@ namespace Xesin.GameplayFramework.Input
             Cursor.lockState = lockMode;
             Cursor.visible = visibility;
         }
-
     }
 }
