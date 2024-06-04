@@ -22,6 +22,18 @@ namespace Xesin.GameplayFramework
         [SerializeField] private Sprite dpadRight;
         [SerializeField] private Sprite leftStick;
         [SerializeField] private Sprite rightStick;
+        [SerializeField] private Sprite rightStickUp;
+        [SerializeField] private Sprite rightStickDown;
+        [SerializeField] private Sprite rightStickLeft;
+        [SerializeField] private Sprite rightStickRight;
+        [SerializeField] private Sprite rightStickX;
+        [SerializeField] private Sprite rightStickY;
+        [SerializeField] private Sprite leftStickUp;
+        [SerializeField] private Sprite leftStickDown;
+        [SerializeField] private Sprite leftStickLeft;
+        [SerializeField] private Sprite leftStickRight;
+        [SerializeField] private Sprite leftStickX;
+        [SerializeField] private Sprite leftStickY;
         [SerializeField] private Sprite leftStickPress;
         [SerializeField] private Sprite rightStickPress;
         [SerializeField] private Sprite unrecognized;
@@ -49,6 +61,18 @@ namespace Xesin.GameplayFramework
                 case "rightStick": return rightStick;
                 case "leftStickPress": return leftStickPress;
                 case "rightStickPress": return rightStickPress;
+                case "leftStick/up": return leftStickUp;
+                case "leftStick/down": return leftStickDown;
+                case "leftStick/left": return leftStickLeft;
+                case "leftStick/right": return leftStickRight;
+                case "rightStick/up": return rightStickUp;
+                case "rightStick/down": return rightStickDown;
+                case "rightStick/left": return rightStickLeft;
+                case "rightStick/right": return rightStickRight;
+                case "leftStick/x": return leftStickX;
+                case "leftStick/y": return leftStickY;
+                case "rightStick/x": return rightStickX;
+                case "rightStick/y": return rightStickY;
             }
             return unrecognized;
         }
