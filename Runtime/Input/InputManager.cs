@@ -146,7 +146,7 @@ namespace Xesin.GameplayFramework.Input
 
             if (!GameplayGlobalSettings.Instance.autocreatePlayersOnInput)
             {
-                if (!GameplayGlobalSettings.Instance.autoAssignUnpairedToPlayerOne)
+                if (GameplayGlobalSettings.Instance.autoAssignUnpairedToPlayerOne)
                 {
                     LocalPlayer playerController = LocalPlayer.GetLocalPlayer(0);
                     if (playerController)
